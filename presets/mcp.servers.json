@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${WORKING_DIR}"]
+    },
+    "shell": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "mcp-server-commands"]
+    },
+    "fetch": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "chrome-devtools": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    }
+  },
+  "optionalServers": {
+    "websearch": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "open-websearch@latest"],
+      "env": {
+        "MODE": "stdio",
+        "SEARCH_MODE": "request",
+        "DEFAULT_SEARCH_ENGINE": "bing",
+        "ALLOWED_SEARCH_ENGINES": "bing,baidu,sogou,csdn,juejin"
+      }
+    },
+    "tavily": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "tavily-mcp@latest"],
+      "env": { "TAVILY_API_KEY": "${TAVILY_API_KEY}" }
+    },
+    "exa": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "exa-mcp-server"],
+      "env": { "EXA_API_KEY": "${EXA_API_KEY}" }
+    }
+  }
+}

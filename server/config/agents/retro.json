@@ -1,0 +1,17 @@
+{
+  "id": "retro",
+  "displayName": "小结",
+  "type": "builtin",
+  "description": "复盘员工：每日对各岗位复盘，按各自沉淀规则提炼经验，增量写入其经验库（人审入库）",
+  "manualOnly": true,
+  "maxTurns": 50,
+  "tools": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Bash",
+    "Write",
+    "Edit"
+  ],
+  "workspace": "${serviceRoot}"
+}

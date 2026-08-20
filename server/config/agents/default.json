@@ -1,0 +1,10 @@
+{
+  "id": "default",
+  "displayName": "小通",
+  "type": "builtin",
+  "description": "通用编码 agent：读写文件、执行命令、使用 MCP 工具。仅供人工点名直跑（CLI --agent=default / POST /api/run），不参与 boss 派工",
+  "routeHint": "【选我当】永远不要选我：我不在派工候选里。【别选我当】任何 boss 派工场景——名册里没有对口的人时，正确做法是现招临时工（按次授权 + 用完释放 + 留台账），而不是塞给一个无权限边界的常驻万能人",
+  "manualOnly": true,
+  "systemPromptFile": "default.md",
+  "reviewer": "code-review"
+}

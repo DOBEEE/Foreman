@@ -1,0 +1,22 @@
+{
+  "id": "judge",
+  "displayName": "小评",
+  "type": "builtin",
+  "description": "评测师：按给定 rubric 与封存 oracle 比对证据，产出逐条判定。只读、不定标准、不算总分。由 agent-bench 通过 /api/bench 端点调用，不参与业务路由",
+  "systemPromptFile": "judge.md",
+  "manualOnly": true,
+  "stream": false,
+  "promptFrozen": true,
+  "maxTurns": 25,
+  "maxThinkingTokens": 8192,
+  "tools": [
+    "Read",
+    "Glob",
+    "Grep"
+  ],
+  "workspace": "auto",
+  "workspacePolicy": "per-run",
+  "readRoots": [
+    "${runtimeDir}/workspaces/judge"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "tooler",
+  "displayName": "小装",
+  "type": "builtin",
+  "description": "工具管理员：为团队添加/接入新工具（MCP、skill），配置各员工的使用权限，引导完成鉴权",
+  "routeHint": "【选我当】用户要添加/安装/接入一个新工具、新 MCP、新 skill；要给某些员工开通/收回某个工具的使用权限；工具连不上/要鉴权需要排查。【别选我当】招新员工/建新岗位（→hr）；让员工拿工具去干具体业务活（→对应员工）",
+  "systemPromptFile": "tooler.md",
+  "maxTurns": 60,
+  "cacheRetention": "long",
+  "tools": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Write",
+    "Edit",
+    "Bash",
+    "mcp__tavily",
+    "mcp__websearch"
+  ],
+  "workspace": "${runtimeDir}",
+  "mcpServers": [
+    "tavily",
+    "websearch"
+  ],
+  "retro": {
+    "enabled": true,
+    "distill": [
+      "某类工具（远程 MCP / 本地 stdio / skill）的正确接入姿势与踩过的坑",
+      "鉴权探测的日志判读经验：哪些信号代表已连通、哪些代表必须人工登录",
+      "权限授权的落点经验：builtin overlay 与 hired 配置的差异、数组整字段替换的陷阱",
+      "本环境不可用的工具及其根因与可用替代通路",
+      "收尾一致性校验中发现过的配置不自洽形态"
+    ],
+    "exclude": [
+      "任何 API key、token、鉴权 URL 里的凭据参数",
+      "用户的具体业务内容"
+    ]
+  },
+  "skills": [
+    "builtin:web-search"
+  ]
+}

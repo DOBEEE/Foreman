@@ -1,0 +1,22 @@
+{
+  "id": "case-drafter",
+  "displayName": "案审",
+  "type": "builtin",
+  "description": "回归用例断言起草人：为用户负反馈型待审 case 起草可机器判定的行为断言（answer_match / required_call），供人工审批。冻结口径，只产草稿，不判分、不改任何文件、不参与业务路由",
+  "systemPromptFile": "case-drafter.md",
+  "manualOnly": true,
+  "stream": false,
+  "promptFrozen": true,
+  "maxTurns": 20,
+  "maxThinkingTokens": 8192,
+  "tools": [
+    "Read",
+    "Glob",
+    "Grep"
+  ],
+  "workspace": "auto",
+  "workspacePolicy": "per-run",
+  "readRoots": [
+    "${knowledgeDir}"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "optimizer",
+  "displayName": "小优",
+  "type": "builtin",
+  "description": "提示词优化分析：读执行 trace 归因失败模式，对**用户员工**的提示词产出待审提案（由主管推送、用户批准后应用；内置岗位不在范围内）",
+  "systemPromptFile": "optimizer.md",
+  "manualOnly": true,
+  "stream": false,
+  "maxTurns": 40,
+  "maxThinkingTokens": 8192,
+  "tools": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Write"
+  ],
+  "workspace": "${serviceRoot}",
+  "paramsSchema": {
+    "agent": "可选，仅分析该用户员工（如 assistant / coder）；内置岗位不在优化范围内",
+    "days": "可选，回看最近 N 天日志，默认 3，上限 30"
+  }
+}

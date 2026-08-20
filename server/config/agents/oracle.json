@@ -1,0 +1,22 @@
+{
+  "id": "oracle",
+  "displayName": "小题",
+  "type": "builtin",
+  "description": "命题人：为已稳定的回归用例起草冻结事实与逐字引文，供二层质量评测当事实源。只读知识库、只产草稿，不判分、不改任何文件、不参与业务路由",
+  "systemPromptFile": "oracle.md",
+  "manualOnly": true,
+  "stream": false,
+  "promptFrozen": true,
+  "maxTurns": 30,
+  "maxThinkingTokens": 8192,
+  "tools": [
+    "Read",
+    "Glob",
+    "Grep"
+  ],
+  "workspace": "auto",
+  "workspacePolicy": "per-run",
+  "readRoots": [
+    "${knowledgeDir}"
+  ]
+}

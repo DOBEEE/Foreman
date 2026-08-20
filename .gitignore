@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+logs/
+.coder-workspace/
+.runtime/
+# 评测制品与基线。基线刻意不进 git：target 指纹含工作区哈希，
+# 跨机器共享的基线拿不到可比性，反而会让人误以为可比。各机器自行 promote。
+.agent-bench/
+# 编辑器本地状态
+.qoder/
+# docs 默认当草稿区，只放行 README 依赖的这两份
+# （negation 对「已整体排除的目录」无效，所以这里排内容而不是排目录）
+/docs
+!/docs/DEVELOPMENT.md
+!/docs/assets/
+.DS_Store

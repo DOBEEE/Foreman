@@ -1,0 +1,48 @@
+{
+  "port": 3000,
+  "publicBaseUrl": "",
+  "maxTurns": 50,
+  "maxAutoContinues": 2,
+  "maxConcurrentRuns": 8,
+
+  "compact": {
+    "contextWindow": 1000000,
+    "atPercent": 0.8,
+    "hardAtPercent": 0.9,
+    "minWindow": 1000000
+  },
+
+  "optimizer": {
+    "schedule": true,
+    "weekday": 1,
+    "hour": 21,
+    "days": 7
+  },
+
+  "bench": {
+    "schedule": true,
+    "weekday": 1,
+    "hour": 20,
+    "days": 7
+  },
+
+  "gate": {
+    "mode": "off"
+  },
+
+  "paths": {
+    "codeRoots": []
+  },
+
+  "dingtalk": {
+    "ack": true,
+    "ackDelayMs": 350
+  },
+
+  "retro": {
+    "schedule": true,
+    "hour": 21,
+    "notifyChat": "",
+    "notifyUser": ""
+  }
+}

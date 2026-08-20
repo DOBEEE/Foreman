@@ -1,0 +1,55 @@
+{
+  "name": "agent-base",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Multi-agent collaboration server built on Vercel AI SDK",
+  "bin": {
+    "foreman": "dist/index.js"
+  },
+  "scripts": {
+    "dev": "AGENT_WEB=vite tsx watch --include=.env --include=server/config/app.json server/index.ts serve",
+    "cli": "AGENT_WEB=vite tsx server/index.ts",
+    "build": "rm -rf dist && tsc && cp -r server/agents/prompts dist/agents/ && cp -r server/bench/rubrics dist/bench/",
+    "build:web": "cd web && npm install --silent && npm run build",
+    "build:all": "npm run build && npm run build:web",
+    "dev:web": "cd web && npm run dev",
+    "start": "node dist/index.js serve",
+    "type-check": "tsc --noEmit",
+    "test": "tsx server/cli/test-runner.ts",
+    "prepack": "npm run build:all"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "files": [
+    "dist",
+    "web/dist",
+    "server/config/**/*.json",
+    "knowledge",
+    "plugins",
+    "presets"
+  ],
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.27",
+    "@ai-sdk/mcp": "^2.0.22",
+    "@ai-sdk/openai": "^4.0.27",
+    "@qoder-ai/qoder-agent-sdk": "^1.0.23",
+    "ai": "^7.0.48",
+    "dingtalk-stream": "^2.1.6-beta.1",
+    "dotenv": "^16.4.0",
+    "express": "^4.18.2",
+    "ink": "^7.1.1",
+    "ink-spinner": "^5.0.0",
+    "ink-text-input": "^6.0.0",
+    "react": "^19.2.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0",
+    "@types/react": "^19.2.17",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "license": "MIT"
+}

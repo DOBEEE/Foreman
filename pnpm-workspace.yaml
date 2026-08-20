@@ -1,0 +1,6 @@
+allowBuilds:
+  # postinstall 会从 download.qoder.com 拉 qodercli-worker-runtime（带 sha256 校验）。
+  # 必须放行：runtime-manifest.json 里 defaultTransport=worker 且 workerRuntime.packaged=false，
+  # 不下载这份运行时，SDK 起不来。
+  '@qoder-ai/qoder-agent-sdk': true
+  esbuild: false

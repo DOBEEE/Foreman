@@ -1,0 +1,21 @@
+{
+  "id": "hr",
+  "displayName": "小招",
+  "type": "builtin",
+  "description": "人事：新增/配置团队成员（创建新的员工 agent）",
+  "routeHint": "用户想扩充团队：新增一个员工 / 招个人 / 配置一个新的 agent 或角色 / 定制一个专职助手时。不是让现有员工干活；添加工具/MCP/skill 或调工具权限找工具管理员（→tooler）。",
+  "systemPromptFile": "hr.md",
+  "maxTurns": 20,
+  "tools": [
+    "Read",
+    "Glob"
+  ],
+  "skills": [
+    "builtin:hire-employee"
+  ],
+  "workspace": "auto",
+  "readRoots": [
+    "${hiredAgentsDir}",
+    "${agentsArchiveDir}"
+  ]
+}

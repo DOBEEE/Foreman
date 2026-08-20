@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      # 类型检查与全部 fixture。fixture 各自跑在临时 RUNTIME_DIR 里，不需要凭据、不联网
+      # （需要 sibling checkout 的 fixture 缺依赖时自己打印「跳过」并 exit 0）
+      - run: npm run type-check
+      - run: npm test
